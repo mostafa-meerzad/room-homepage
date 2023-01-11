@@ -11,13 +11,10 @@ const Hamburger = ({state, setState}) => {
     }
     return (
         <>
-
-
-
-            <div className="header__hamburger hamburger" style={{width:"20px", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", gap:"5px"}} onClick={handleClick}>
-                <motion.div initial={{rotate:0}} style={{width:"100%", backgroundColor:"gray", height:2}} className="hamburger__line"/>
-                <motion.div initial={{rotate:0}}  style={{width:"100%", backgroundColor:"gray", height:2}} className="hamburger__line"/>
-                <motion.div initial={{rotate:0}}  style={{width:"100%", backgroundColor:"gray", height:2, transformOrigin:"left"}} className="hamburger__line"/>
+            <div className={state ? "header__hamburger hamburger hamburger--active":"header__hamburger hamburger"  }  onClick={handleClick}>
+                <motion.div initial={{rotate:0}} animate={state ?{rotate:45, y:7}:{}} className="hamburger__line"/>
+                <motion.div initial={{rotate:0, scale:1}} animate={state ?{scale:0}:{}} className="hamburger__line"/>
+                <motion.div initial={{rotate:0}} animate={state ?{rotate:-45, y:-6.5}:{}} className="hamburger__line"/>
             </div>
 
 

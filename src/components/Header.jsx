@@ -7,7 +7,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const menuVariants = {
         hidden:{
-            x:-400
+            x:"-100vw"
         }, visible:{
             x:0, transition:{
                 staggerChildren:.2
