@@ -15,14 +15,15 @@ const Main = ({desktopSrc, mobileSrc, title, desc, setPageNum, pageNum, maxPageN
                 <source media="(min-width: 375px)" srcSet={mobileSrc}/>
                 <img src={mobileSrc} alt=""/>
             </picture>
+            <div className="main__btn-container">
+                <button className="main__btn" onClick={handlePrev}><AngleLeft/></button>
+                <button className="main__btn" onClick={handleNext}><AngleRight/></button>
+            </div>
             <div className="main__content">
                 <h2 className="main__title">{title}</h2>
                 <p className="main__desc">{desc}</p>
 
-                <div className="main__btn-container">
-                    <button className="main__btn" onClick={handlePrev}><AngleLeft/></button>
-                    <button className="main__btn" onClick={handleNext}><AngleRight/></button>
-                </div>
+
                 <button className="main__btn-show">
                     <span>
                         shop now
@@ -30,6 +31,7 @@ const Main = ({desktopSrc, mobileSrc, title, desc, setPageNum, pageNum, maxPageN
                     <Arrow/>
                 </button>
             </div>
+
         </main>
     );
 };
