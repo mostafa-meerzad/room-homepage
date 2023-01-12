@@ -6,7 +6,9 @@ $desktop-view:1440px;
 
 //### Primary
 
-$dark-gray: hsl(0, 0%, 63%);
+//$dark-gray: hsl(0, 0%, 63%);
+//modify original paragraph color to meet accessibility criteria
+$dark-gray: hsl(0, 0%, 44%);
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
 $very-dark-gray: hsl(0, 0%, 27%);
