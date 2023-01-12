@@ -13,7 +13,7 @@ const App = () => {
         <>
             <Header />
             <Main title={dataMain[pageNum].title} desc={dataMain[pageNum].desc} desktopSrc={dataMain[pageNum].img[0]}
-                  mobileSrc={dataMain[pageNum].img[1]} setPageNum={setPageNum} maxPageNum={maxPageNum} minPageNum={minPageNum} pageNum={pageNum}/>
+                  mobileSrc={dataMain[pageNum].img[1]} setPageNum={setPageNum} maxPageNum={maxPageNum} minPageNum={minPageNum} pageNum={pageNum} theKey={pageNum}/>
             <Footer title={dataFooter.title} desc={dataFooter.desc} imgLight={dataFooter.imgAboutLight}
                     imgDark={dataFooter.imgAboutDart}/>
 

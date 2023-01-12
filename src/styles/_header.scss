@@ -43,6 +43,7 @@
 
   &__menu-item {
     font-weight: 600;
+    cursor: pointer;
   }
 
   @media all and (min-width: variables.$desktop-view) {
@@ -64,7 +65,17 @@
     &__menu-item {
       opacity: 1 !important;
       color: variables.$white;
-
+      &:hover::after{
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        left: 50%;
+        bottom:-40%;
+        border-radius: 5px;
+        background-color: currentColor;
+        transform: translate(-50%, 100%);
+      }
     }
   }
 

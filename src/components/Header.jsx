@@ -31,7 +31,7 @@ const Header = () => {
             <motion.nav className="header__nav" variants={menuVariants} initial="hidden" animate={isMenuOpen ? "visible":"hidden"}>
                 <ul className="header__menu">
                     {headerData.map((item, i) => {
-                       return <motion.li className="header__menu-item" variants={menuItemVariants} key={i}>{item}</motion.li>
+                       return <motion.li className="header__menu-item" variants={menuItemVariants} whileTap={{scale:.9}} key={i}>{item}</motion.li>
                     })}
                 </ul>
             </motion.nav>
