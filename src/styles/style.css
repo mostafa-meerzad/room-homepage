@@ -99,14 +99,17 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  position: relative;
 }
-.hero__picture::after {
-  content: "";
-  inset: 0;
-  position: absolute;
-  background-color: #000;
-  z-index: 10;
-  animation: test 500ms ease-in-out forwards;
+@media all and (min-width: 1024px) {
+  .hero__picture::after {
+    content: "";
+    inset: 0;
+    height: 100%;
+    position: absolute;
+    background-color: #000;
+    animation: test 500ms ease-in-out forwards;
+  }
 }
 @keyframes test {
   from {
