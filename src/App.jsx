@@ -1,24 +1,40 @@
-import React, {useState} from 'react';
-import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
-import Main from "./components/Main.jsx";
-import {dataMain, dataFooter} from "./data.jsx"
+import { useState } from "react";
 
-import "./styles/style.css"
-const maxPageNum = dataMain.length - 1
-const minPageNum = 0
+import { dataHero } from "./constants.js";
+
+import Header from "./sections/Header.jsx";
+import Hero from "./sections/Hero.jsx";
+import About from "./sections/About.jsx";
+
+import "./styles/style.css";
+
 const App = () => {
-    const [pageNum, setPageNum] = useState(0)
-    return (
-        <>
-            <Header />
-            <Main title={dataMain[pageNum].title} desc={dataMain[pageNum].desc} desktopSrc={dataMain[pageNum].img[0]}
-                  mobileSrc={dataMain[pageNum].img[1]} setPageNum={setPageNum} maxPageNum={maxPageNum} minPageNum={minPageNum} pageNum={pageNum} theKey={pageNum}/>
-            <Footer title={dataFooter.title} desc={dataFooter.desc} imgLight={dataFooter.imgAboutLight}
-                    imgDark={dataFooter.imgAboutDart}/>
-
-        </>
+  const [currentTab, setCurrentTab] = useState(1);
+  const handleNext = () => {
+    setCurrentTab((prevTab) =>
+      currentTab === dataHero.length - 1 ? 0 : prevTab + 1
     );
+  };
+  const handlePrev = () => {
+    setCurrentTab((prevTab) =>
+      currentTab === 0 ? dataHero.length - 1 : prevTab - 1
+    );
+  };
+
+  
+  return (
+    <>
+      <Header />
+      <main>
+        <Hero
+          currentTab={currentTab}
+          handleNext={handleNext}
+          handlePrev={handlePrev}
+        />
+        <About />
+      </main>
+    </>
+  );
 };
 
 export default App;
