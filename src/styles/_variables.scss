@@ -1,7 +1,7 @@
 
 //- Mobile: 375px
 //- Desktop: 1440px
-$desktop-view:1440px;
+$desktop-view:1024px;
 //## Colors
 
 //### Primary
@@ -17,6 +17,7 @@ $very-dark-gray: hsl(0, 0%, 27%);
 
 $font-size: 12px;
 
+$content-padding:2rem;
 //### Font
 
 //- Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
